@@ -6,6 +6,48 @@ import { useState } from 'react'
 
 export default function Home() {
   const [showContactPopup, setShowContactPopup] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitStatus('idle'), 5000)
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <main className="min-h-screen">
@@ -382,14 +424,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
             <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/integria-web-logo.png" alt="integria-web-logo" className="w-full h-full object-cover" /></div>
+                <div className="text-6xl"><img src="/project/integre.png" alt="integria-web-logo" className="w-full h-full object-cover" /></div>
                 <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    E-commerce
-                  </span>
+        
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">Integria Healthcare</span>
                 </div>
@@ -397,6 +437,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a comprehensive e-commerce platform for Integria Healthcare, a leading natural healthcare company in Australia. Built a responsive, user-friendly online store with product catalog, shopping cart, and secure checkout functionality.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    E-commerce
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -427,21 +472,23 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
             <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/isuzu-australia.png" alt="isuzu" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    React Js
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/isuzu-logo.png" alt="isuzu" className="w-full h-full object-cover" /></div>
+          
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">Isuzu UTE Australia</span>
                 </div>
+              
                 <h3 className="text-2xl font-bold mb-3">Isuzu UTE Australia Website</h3>
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a comprehensive corporate website for Isuzu UTE Australia featuring their D-MAX ute and MU-X SUV vehicle lines. Built with modern front-end technologies and Sitecore CMS for content management and scalability.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    React Js
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -796,7 +843,7 @@ export default function Home() {
             Ready to transform your ideas into reality? Let's discuss how I can help you build intelligent, scalable solutions! Let's discuss your project and business growth.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-1 gap-8">
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="card-glass rounded-xl p-6">
@@ -805,8 +852,8 @@ export default function Home() {
                   <h3 className="text-xl font-bold">Get In Touch</h3>
                 </div>
                 
-                <div className="space-y-4">
-                  <a href="mailto:khizerhayat345@gmail.com" className="flex items-center gap-4 p-4 rounded-lg hover:bg-dark-700 transition-all group">
+                <div className="flex flex-col gap-4 md:flex-row md:items-stretch md:gap-5">
+                  <a href="mailto:heshantha.l@gmail.com" className="flex-1 flex items-center gap-4 p-4 rounded-lg hover:bg-dark-700 transition-all group">
                     <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600/30 transition-all">
                       <Mail className="w-6 h-6 text-blue-400" />
                     </div>
@@ -816,29 +863,29 @@ export default function Home() {
                     </div>
                   </a>
 
-                  <a href="tel:+94719412688" className="flex items-center gap-4 p-4 rounded-lg hover:bg-dark-700 transition-all group">
+                  <a href="tel:+94719412688" className="flex-1 flex items-center gap-4 p-4 rounded-lg hover:bg-dark-700 transition-all group">
                     <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center group-hover:bg-blue-600/30 transition-all">
                       <Phone className="w-6 h-6 text-blue-400" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">WHATSAPP</p>
-                      <p className="font-semibold">+94 71 941 2688</p>
+                      <p className="font-semibold">+94 71 941 2688 <br /> +94 74 117 4573</p>
                     </div>
                   </a>
 
-                  <div className="flex items-center gap-4 p-4 rounded-lg">
+                  <div className="flex-1 flex items-center gap-4 p-4 rounded-lg">
                     <div className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-blue-400" />
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">LOCATION</p>
-                      <p className="font-semibold">Remote / Sri Lanka</p>
+                      <p className="font-semibold">Malabe, Sri Lanka</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="card-glass rounded-xl p-6">
+              {/* <div className="card-glass rounded-xl p-6">
                 <h3 className="text-xl font-bold mb-4">Availability Status</h3>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -847,58 +894,10 @@ export default function Home() {
                 <p className="text-gray-400 text-sm">
                   Currently accepting new opportunities.
                 </p>
-              </div>
+              </div> */}
             </div>
 
-            {/* Contact Form */}
-            <div className="card-glass rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Name *</label>
-                    <input 
-                      type="text" 
-                      placeholder="Your full name"
-                      className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-all"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">Email *</label>
-                    <input 
-                      type="email" 
-                      placeholder="your.email@example.com"
-                      className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-all"
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Subject *</label>
-                  <input 
-                    type="text" 
-                    placeholder="What is this about?"
-                    className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-all"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold mb-2">Message *</label>
-                  <textarea 
-                    rows={5}
-                    placeholder="Tell me about your project, timeline, and budget..."
-                    className="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition-all resize-none"
-                  />
-                </div>
-
-                <button 
-                  type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-600/30"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </section>
