@@ -518,14 +518,10 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
             <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/city-hire-logo.png" alt="cityhire" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    CMS Development
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/city-hire-banner.png" alt="cityhire" className="w-full h-full object-cover" /></div>
+  
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">CityHire UK</span>
                 </div>
@@ -533,6 +529,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed and enhanced the CityHire equipment rental platform built on Umbraco CMS. Improved functionality, user experience, and implemented modern UI/UX design for one of UK's leading equipment hire services.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                CMS Development
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -562,14 +563,9 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/waverley-mills.png" alt="waverley-mills" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    Word Press
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/waverly-mills-banner.png" alt="waverley-mills" className="w-full h-full object-cover" /></div>
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">Waverley Mills Australia</span>
                 </div>
@@ -577,6 +573,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a premium e-commerce platform for Waverley Mills, Australia's heritage wool mill. Built with WordPress and custom theming for a luxurious shopping experience featuring wool blankets, throws, and home accessories.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                Word Press
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -607,14 +608,9 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/mustad-logo.png" alt="mustad" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    B2B E-commerce
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/mustad-banner.png" alt="mustad" className="w-full h-full object-cover" /></div>
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">Mustad EMEA</span>
                 </div>
@@ -622,6 +618,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a comprehensive B2B dealer e-commerce platform for Mustad EMEA Distribution. Built a secure, login-based webshop with multi-language support for authorized dealers across Europe, Middle East, and Africa regions.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                B2B E-commerce
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -653,13 +654,8 @@ export default function Home() {
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/larsonjuhl-logo.png" alt="larsonjuhl" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    B2B E-commerce
-                  </span>
-                </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">Larson Juhl UK</span>
                 </div>
@@ -667,6 +663,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a comprehensive e-commerce platform for Larson Juhl UK, a leading supplier of picture framing products and mouldings. Built a professional platform with extensive product catalog and seamless ordering experience for trade customers.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                B2B E-commerce
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -697,14 +698,10 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/sfs-logo.png" alt="sfs" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    E-commerce
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/sfs-banner.png" alt="sfs" className="w-full h-full object-cover" /></div>
+             
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">SFS Group UK</span>
                 </div>
@@ -712,6 +709,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a comprehensive e-commerce platform for SFS Group UK, a leading manufacturer of mechanical fastening systems and precision components. Built a professional B2B/B2C platform with advanced product catalog and ordering capabilities.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    E-commerce
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -742,14 +744,10 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/powerhousegroup-logo.png" alt="powerhousegroup" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    Corporate Website
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/powerhouse-banner.png" alt="powerhousegroup" className="w-full h-full object-cover" /></div>
+                
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">PowerHouse Group Australia</span>
                 </div>
@@ -757,6 +755,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a professional corporate website for PowerHouse Group Australia, a leading provider of business solutions and services. Built a modern, responsive platform showcasing their services, expertise, and company values with engaging user experience.
                 </p>
+                <div className="absolute top-4 right-4">
+                <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    Corporate Website
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
@@ -787,14 +790,10 @@ export default function Home() {
 
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/fastlinecarpetcleaning-logo.png" alt="fastlinecarpetcleaning" className="w-full h-full object-cover" /></div>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    Word Press
-                  </span>
-                </div>
+                <div className="text-6xl"><img src="/project/fastline-banner.png" alt="fastlinecarpetcleaning" className="w-full h-full object-cover" /></div>
+              
               </div>
-              <div className="p-6">
+              <div className="p-6 relative">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-400">Fastline Carpet Cleaning Melbourne</span>
                 </div>
@@ -802,6 +801,11 @@ export default function Home() {
                 <p className="text-gray-400 mb-4 text-sm">
                   Developed a comprehensive service website for Fastline Carpet Cleaning, a professional cleaning company serving Melbourne and surrounding areas. Built a user-friendly platform showcasing their cleaning services with online booking and quote functionality.
                 </p>
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    Word Press
+                  </span>
+                </div>
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
                   <ul className="text-gray-400 text-sm space-y-1">
