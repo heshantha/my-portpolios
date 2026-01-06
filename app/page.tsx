@@ -14,6 +14,30 @@ export default function Home() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  // Project category mapping
+  const projectCategories: { [key: string]: string[] } = {
+    'integria': ['E-commerce'],
+    'isuzu': ['React/Next.js'],
+    'cityhire': ['Umbraco', 'CMS'],
+    'waverley': ['WordPress', 'E-commerce'],
+    'mustad': ['E-commerce'],
+    'larsonjuhl': ['E-commerce'],
+    'sfs': ['E-commerce'],
+    'powerhouse': ['CMS'],
+    'fastline': ['WordPress', 'CMS'],
+    'abemec': ['E-commerce', 'CMS'],
+    'wildwood': ['React/Next.js'],
+    'genesis': ['E-commerce', 'CMS'],
+    'testo': ['React/Next.js'],
+    'escapequest': ['CMS']
+  }
+
+  const shouldShowProject = (projectKey: string) => {
+    if (activeFilter === 'All') return true
+    return projectCategories[projectKey]?.includes(activeFilter) || false
+  }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -404,24 +428,60 @@ export default function Home() {
             Showcasing real-world applications with measurable impact and cutting-edge technology
           </p>
 
-          {/* Filter Buttons */}
-          {/* <div className="flex flex-wrap gap-3 justify-center mb-12">
-            <button className="px-6 py-2 bg-blue-600 rounded-full font-semibold transition-all hover:bg-blue-700">
+           <div className="flex flex-wrap gap-3 justify-center mb-12">
+            <button 
+              onClick={() => setActiveFilter('All')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                activeFilter === 'All' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-dark-700 hover:bg-dark-600'
+              }`}
+            >
               All
             </button>
-            <button className="px-6 py-2 bg-dark-700 rounded-full font-semibold transition-all hover:bg-dark-600">
-              Machine Learning
+            <button 
+              onClick={() => setActiveFilter('E-commerce')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                activeFilter === 'E-commerce' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-dark-700 hover:bg-dark-600'
+              }`}
+            >
+              E-commerce
             </button>
-            <button className="px-6 py-2 bg-dark-700 rounded-full font-semibold transition-all hover:bg-dark-600">
-              Full Stack
+            <button 
+              onClick={() => setActiveFilter('React/Next.js')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                activeFilter === 'React/Next.js' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-dark-700 hover:bg-dark-600'
+              }`}
+            >
+              React/Next.js
             </button>
-            <button className="px-6 py-2 bg-dark-700 rounded-full font-semibold transition-all hover:bg-dark-600">
-              Featured
+            <button 
+              onClick={() => setActiveFilter('WordPress')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                activeFilter === 'WordPress' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-dark-700 hover:bg-dark-600'
+              }`}
+            >
+              WordPress
             </button>
-          </div> */}
+            <button 
+              onClick={() => setActiveFilter('Umbraco')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                activeFilter === 'Umbraco' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-dark-700 hover:bg-dark-600'
+              }`}
+            >
+              Umbraco
+            </button>
+            <button 
+              onClick={() => setActiveFilter('CMS')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                activeFilter === 'CMS' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-dark-700 hover:bg-dark-600'
+              }`}
+            >
+              CMS
+            </button>
+          </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
+            {shouldShowProject('integria') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
             <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/integre.png" alt="integria-web-logo" className="w-full h-full object-cover" /></div>
@@ -439,7 +499,7 @@ export default function Home() {
                 </p>
                 <div className="absolute top-4 right-4">
                 <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    E-commerce
+                    E-commerce (CMS Development)
                   </span>
                 </div>
                 <div className="mb-4">
@@ -469,10 +529,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('isuzu') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
             <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
-                <div className="text-6xl"><img src="/project/isuzu-logo.png" alt="isuzu" className="w-full h-full object-cover" /></div>
+                <div className="text-6xl"><img src="/project/isuzu-banner.png" alt="isuzu" className="w-full h-full object-cover" /></div>
           
               </div>
               <div className="p-6 relative">
@@ -515,7 +577,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('cityhire') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
             <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/city-hire-banner.png" alt="cityhire" className="w-full h-full object-cover" /></div>
@@ -531,7 +595,7 @@ export default function Home() {
                 </p>
                 <div className="absolute top-4 right-4">
                 <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                CMS Development
+                Umbraco
                   </span>
                 </div>
                 <div className="mb-4">
@@ -560,7 +624,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('waverley') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/waverly-mills-banner.png" alt="waverley-mills" className="w-full h-full object-cover" /></div>
@@ -605,7 +671,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('mustad') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/mustad-banner.png" alt="mustad" className="w-full h-full object-cover" /></div>
@@ -650,7 +718,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('larsonjuhl') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/larsonjuhl-logo.png" alt="larsonjuhl" className="w-full h-full object-cover" /></div>
@@ -695,7 +765,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('sfs') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/sfs-banner.png" alt="sfs" className="w-full h-full object-cover" /></div>
@@ -741,7 +813,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('powerhouse') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/powerhouse-banner.png" alt="powerhousegroup" className="w-full h-full object-cover" /></div>
@@ -787,7 +861,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
 
+            {shouldShowProject('fastline') && (
             <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
               <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
                 <div className="text-6xl"><img src="/project/fastline-banner.png" alt="fastlinecarpetcleaning" className="w-full h-full object-cover" /></div>
@@ -803,7 +879,7 @@ export default function Home() {
                 </p>
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
-                    Word Press
+                    Word Press (CMS Development)  
                   </span>
                 </div>
                 <div className="mb-4">
@@ -833,6 +909,246 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            )}
+
+            {shouldShowProject('abemec') && (
+            <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
+              <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
+                <div className="text-6xl"><img src="/project/abemec-banner.png" alt="abemec" className="w-full h-full object-cover" /></div>
+              
+              </div>
+              <div className="p-6 relative">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-400">Abemec | Agricultural & Digital Services</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Abemec.nl Marketing & Service Platform</h3>
+                <p className="text-gray-400 mb-4 text-sm">
+                  Refreshed the multi-section portal for Abemec, covering machinery, service, digital products, and training information so every speciality is directly accessible from the homepage experience.
+                </p>
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    E-commerce (CMS Development)
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>• Deep navigation across Machines, Service, Digital, Dairy, and Scholing verticals</li>
+                    <li>• Service booking and maintenance intake alongside keuringen, kenteken, and theft-alert workflows</li>
+                    <li>• Digital showcase for AbemecRTK, robotics, GPS/stuur systems, and electrification partners</li>
+                    <li>• Career, newsletter, media, and legal CTAs kept in sync with the brand story</li>
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">TECH STACK:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">HTML5</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">CSS3</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">JavaScript</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Responsive Design</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Content CMS</span>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <a href="https://www.abemec.nl/" target="_blank" rel="noopener noreferrer" className="flex-1 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <ExternalLink className="w-4 h-4" />
+                    View Live Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            )}
+
+            {shouldShowProject('wildwood') && (
+            <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
+              <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
+                <div className="text-6xl"><img src="/project/packiyo-logo.png" alt="wildwood-dashboard" className="w-full h-full object-cover" /></div>
+              
+              </div>
+              <div className="p-6 relative">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-400">Wildwood | Fulfillment Intelligence</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Wildwood Operations Dashboard</h3>
+                <p className="text-gray-400 mb-4 text-sm">
+                  Built the Wildwood cockpit that keeps fulfillment teams on top of orders, shipments, inventory health, returns, and procurement KPIs from a single screen.
+                </p>
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    Next js
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>• Day/Week/Month KPIs for orders to ship, due today, shipped, late, and in totes with trend deltas</li>
+                    <li>• Order-by-age histogram coupled with ready-to-ship method breakdowns for bulk, single, and regular picking</li>
+                    <li>• Replenishment and backorder tables listing SKUs, on-hand, ordered, and replenishment quantities plus deep links</li>
+                    <li>• Returns overview and PO/Inbound summaries to align teams on volume, reasons, and open purchase orders</li>
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">TECH STACK:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Next.js</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">React</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Tailwind CSS</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Data Visualization</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Headless CMS</span>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <a href="https://wildwood-new.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" className="flex-1 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <ExternalLink className="w-4 h-4" />
+                    View Live Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            )}
+
+            {shouldShowProject('genesis') && (
+            <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
+              <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
+                <div className="text-6xl"><img src="/project/genesis-banner.png" alt="Genesis Import storefront" className="w-full h-full object-cover" /></div>
+              
+              </div>
+              <div className="p-6 relative">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-400">Genesis Import | German Retail Experience</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Genesis-Shop Multi-Category Shop</h3>
+                <p className="text-gray-400 mb-4 text-sm">
+                  Modernized the Genesis Import storefront with localization, seasonal product highlights, news, and support content to drive conversions on the German e-commerce site.
+                </p>
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    E- commerce (CMS Development)
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>• Region-specific product grids for E-Zigaretten, Zubehör, and Premium Airl bundles</li>
+                    <li>• Embedded news, media, legal, and service sections to build trust around payments, shipping, and warranties</li>
+                    <li>• Wholesale and affiliate CTAs plus localized customer care touchpoints</li>
+                    <li>• Visible logistics, returns, and support information to reduce friction on the storefront</li>
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">TECH STACK:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Shopify</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Liquid</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Headless CMS</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Responsive Design</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Localization</span>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <a href="https://shop.genesis-import.de/de-de/" target="_blank" rel="noopener noreferrer" className="flex-1 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <ExternalLink className="w-4 h-4" />
+                    View Live Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            )}
+
+            {shouldShowProject('testo') && (
+            <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
+              <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
+                <div className="text-6xl"><img src="/project/testo-banner.png" alt="Testo measurement" className="w-full h-full object-cover" /></div>
+              
+              </div>
+              <div className="p-6 relative">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-400">Testo | Measurement Specialists</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Testo Australia Brand Experience</h3>
+                <p className="text-gray-400 mb-4 text-sm">
+                  Showcases Testo’s range of handheld meters, thermal cameras, and IoT monitoring solutions, plus support and education to help Australian engineers and technicians choose the right tool.
+                </p>
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    React js
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>• Product categories for thermal imaging, HVAC, food safety, and industrial sensors with tech specs</li>
+                    <li>• Resources for calibration, service, webinars, and calibration booking forms</li>
+                    <li>• Support hubs outlining warranty, software updates, and contact routes for Australian operations</li>
+                    <li>• News, downloadables, and compliance content centered on the Testo lab and field solutions</li>
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">TECH STACK:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">React</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Content CMS</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Responsive Design</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Localization</span>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <a href="https://www.testo.com/en-AU" target="_blank" rel="noopener noreferrer" className="flex-1 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <ExternalLink className="w-4 h-4" />
+                    View Live Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            )}
+
+            {shouldShowProject('escapequest') && (
+            <div className="card-glass rounded-xl overflow-hidden group hover:border-blue-500/50 transition-all">
+              <div className="relative h-48 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 flex items-center justify-center">
+                <div className="text-6xl"><img src="/project/escapequest-banner.png" alt="escape quest" className="w-full h-full object-cover" /></div>
+              
+              </div>
+              <div className="p-6 relative">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-400">Escape Quest | Entertainment & Team Building</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Escape Quest NZ Experience Platform</h3>
+                <p className="text-gray-400 mb-4 text-sm">
+                  Award-winning escape room platform featuring Gold Rush-themed rooms across Auckland (Takapuna) and Queenstown, with indoor, VR, mixed reality, outdoor experiences, and play-at-home options for groups and team building.
+                </p>
+                <div className="absolute top-4 right-4">
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs text-blue-400">
+                    CMS
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">KEY FEATURES:</p>
+                  <ul className="text-gray-400 text-sm space-y-1">
+                    <li>• Multi-format experiences: traditional escape rooms, VR, mixed reality, outdoor games, and remote play-at-home</li>
+                    <li>• Online booking system for Auckland and Queenstown locations with real-time availability</li>
+                    <li>• Leaderboards, testimonials, FAQs, and group package options for corporate, schools, and celebrations</li>
+                    <li>• Mission showcases with themed Gold Rush narrative and difficulty ratings for each room</li>
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <p className="text-sm font-semibold mb-2">TECH STACK:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">JavaScript</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Booking Integration</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Responsive Design</span>
+                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Content CMS</span>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <a href="https://www.escapequest.co.nz/" target="_blank" rel="noopener noreferrer" className="flex-1 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <ExternalLink className="w-4 h-4" />
+                    View Live Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            )}
+
           </div>
         </div>
       </section>
