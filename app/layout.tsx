@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import Chatbot from '@/components/Chatbot'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Heshantha Laskshitha Abeykoon - Senior Front end Developer',
-  description: 'Portfolio of Heshantha Laskshitha Abeykoon - Senior Front end Developer',
+  title: 'Heshantha Lakshitha Abeykoon - Senior Front end Developer',
+  description: 'Portfolio of Heshantha Lakshitha Abeykoon - Senior Front end Developer',
 }
 
 export default function RootLayout({
@@ -18,7 +19,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Chatbot />
+      </body>
     </html>
   )
 }

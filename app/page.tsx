@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="text-blue-400 text-lg mb-2 font-medium">Hi, I'm Heshantha Laskshitha Abeykoon</p>
+          <p className="text-blue-400 text-lg mb-2 font-medium">Hi, I'm Heshantha Lakshitha Abeykoon</p>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-gradient" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               Senior Front end 
@@ -1227,7 +1227,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Heshantha Laskshitha Abeykoon</h3>
+              <h3 className="text-xl font-bold mb-4">Heshantha Lakshitha Abeykoon</h3>
               <p className="text-gray-400 text-sm">
                 Building intelligent solutions and driving innovation through front end development and new technologies.
               </p>
