@@ -14,6 +14,7 @@ const SUGGESTIONS = [
   'Where has he worked?',
   'How can I contact him?',
   'Why hire Heshantha?',
+  'What tech stack is used for this?',
 ]
 
 export default function Chatbot() {

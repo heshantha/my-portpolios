@@ -3,6 +3,10 @@
 import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import SkillsGalaxy from '@/components/SkillsGalaxy'
+import WorkExperienceTimeline from '@/components/WorkExperienceTimeline'
+import EducationCarousel from '@/components/EducationCarousel'
+import SectionDivider from '@/components/SectionDivider'
 
 export default function Home() {
   const [showContactPopup, setShowContactPopup] = useState(false)
@@ -95,11 +99,11 @@ export default function Home() {
           <p className="text-blue-400 text-lg mb-2 font-medium">Hi, I'm Heshantha Lakshitha Abeykoon</p>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-gradient" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Senior Front end 
+              Senior Full Stack 
             </span>
             <br />
             <span className="text-gradient" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Developer
+            Engineer
             </span>
           </h1>
           
@@ -136,6 +140,8 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* About Me Section */}
       <section className="py-20 px-4" id="about">
         <div className="max-w-6xl mx-auto">
@@ -143,280 +149,21 @@ export default function Home() {
             About <span className="text-gradient">Me</span>
           </h2>
           
-          <p className="text-center text-gray-400 max-w-3xl mx-auto mb-16">
-            Dedicated and innovative Senior Front-End Developer with over a decade of experience in crafting engaging user interfaces and seamless user experiences. Proficient in a variety of front-end frameworks and technologies, including React, Vue.js, Next.js, and Angular. Skilled in translating design concepts into responsive, high-performance web applications.
+          <p className="text-center text-gray-400 max-w-3xl mx-auto">
+          I’m Heshantha Lakshitha, a Senior Full Stack Engineer with experience building responsive, accessible, and high-performance web applications. I specialize in React.js, Next.js, TypeScript, JavaScript, and modern UI frameworks such as Tailwind CSS, Material UI, and Shadcn UI. I’m passionate about transforming complex requirements into scalable, user-friendly digital experiences and continuously expanding my knowledge in full-stack development, cloud technologies, automation, and AI.
           </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="card-glass rounded-xl p-8 animate-slide-up">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <h3 className="text-2xl font-bold">Technical Expertise</h3>
-              </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-blue-400 font-semibold">Frontend Development</span>
-                    <span className="text-gray-400">95%</span>
-                  </div>
-                  <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '95%' }}></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">HTML</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">CSS</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">JavaScript</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">TypeScript</span>
-                  </div>
-                </div>
-
-                {/* Frameworks & Libraries */}
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-blue-400 font-semibold">Frameworks & Libraries</span>
-                    <span className="text-gray-400">95%</span>
-                  </div>
-                  <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '95%' }}></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">React.js</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Next.js</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Vue.js</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Angular</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Redux</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Zustand</span>
-                  </div>
-                </div>
-
-                {/* CSS & UI Frameworks */}
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-blue-400 font-semibold">CSS & UI Frameworks</span>
-                    <span className="text-gray-400">90%</span>
-                  </div>
-                  <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '90%' }}></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Tailwind CSS</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Sass</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Less</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Bootstrap</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Material UI</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Shadcn UI</span>
-                  </div>
-                </div>
-
-                {/* UI/UX & Design Tools */}
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-blue-400 font-semibold">UI/UX & Design</span>
-                    <span className="text-gray-400">88%</span>
-                  </div>
-                  <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '88%' }}></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Figma</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Adobe XD</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Photoshop</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Illustrator</span>
-                  </div>
-                </div>
-
-                {/* Backend & Database */}
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-blue-400 font-semibold">Backend & Database</span>
-                    <span className="text-gray-400">75%</span>
-                  </div>
-                  <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '75%' }}></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Node.js</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Express.js</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">REST APIs</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">GraphQL</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">MongoDB</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">MySQL</span>
-                  </div>
-                </div>
-
-                {/* Tools & Cloud */}
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-blue-400 font-semibold">Cloud & DevOps</span>
-                    <span className="text-gray-400">80%</span>
-                  </div>
-                  <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '80%' }}></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">AWS</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">firebase</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">Git</span>
-                    <span className="px-3 py-1 bg-blue-600/20 border border-blue-600/30 rounded-full text-xs">CI/CD</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Professional Journey */}
-            <div className="card-glass rounded-xl p-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <h3 className="text-2xl font-bold">Professional Journey</h3>
-              </div>
-
-              <div className="space-y-6">
-                {/* APIG Pvt Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">Senior Front-End Developer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">May 2025 - Present</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">APIG Pvt Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Developed and maintained responsive web applications using Next.js, Shadcn UI, TypeScript and Tailwind CSS</li>
-                    <li>• Contributed to Apigenie product (WMS, carriers, eCommerce platform) and Wildwood inventory management system</li>
-                    <li>• Significantly improved Apigenie performance and optimized codebase</li>
-                  </ul>
-                </div>
-
-                {/* Talphsolutions Pvt Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">Senior Front-End Developer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Jul 2024 - May 2025</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">Talphsolutions Pvt Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Developed responsive web applications using Next.js, Material-UI, and Tailwind CSS</li>
-                    <li>• Contributed to Medispec project (patient appointment system for UK hospital)</li>
-                    <li>• Enhanced functionality and UI/UX for CityHire platform built on Umbraco and JavaScript</li>
-                  </ul>
-                </div>
-
-                {/* Codehouse Pvt Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">Senior Front-End Developer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Jan 2024 - Jul 2024</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">Codehouse Pvt Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Created and modified Sitecore components, optimized code for better performance</li>
-                    <li>• Successfully launched urgent project within short timeframe</li>
-                    <li>• Improved performance and code reusability by optimizing scripts and CSS</li>
-                  </ul>
-                </div>
-
-                {/* Sana Commerce Pvt Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">Associated Tech Lead</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Nov 2018 - Nov 2023</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">Sana Commerce Pvt Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Led team of 3 Front-end developers, achieved 40% increase in project customizations</li>
-                    <li>• Managed multiple B2B/B2C e-commerce project customizations for USA, Euro, and Australia regions</li>
-                    <li>• Successfully secured two major customers by addressing their concerns effectively</li>
-                  </ul>
-                </div>
-                {/* EasyBooking Pvt Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">Senior Front-End Developer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Nov 2015 - Nov 2018</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">EasyBooking Pvt Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Lead a team responsible for web and mobile application development</li>
-                    <li>• Provided innovative products and digital solutions to help businesses navigate complex
-                    markets.</li>
-                  </ul>
-                </div>
-                  {/* 3PRG Pvt Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg"> Front-End Developer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Nov 2014 - Nov 2015</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">EasyBooking Pvt Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Oversee the development and delivery of effective user interfaces for various client websites.</li>
-                    <li>• Ensured complex information was presented in a compelling manner.</li>
-                  </ul>
-                </div>
-                {/* Victory Information (Pvt) Ltd */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">UI Engineer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Mar 2013 - Oct 2014</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">Victory Information (Pvt) Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Contributed as a UI Engineer to the leading software development company in Sri Lanka.</li>
-                    <li>• Worked with a diverse team of developers, designers, QA engineers, and marketers.</li>
-                  </ul>
-                </div>
-                {/* Ranomark International (Pvt) Ltd  */}
-                <div className="border-l-2 border-blue-500 pl-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-lg">Training UI Engineer / UI Engineer</h4>
-                    <span className="text-sm text-gray-400 whitespace-nowrap">Aug 2011 - Mar 2013</span>
-                  </div>
-                  <p className="text-blue-400 text-xs mb-2">Ranomark International (Pvt) Ltd</p>
-                  <ul className="text-gray-400 text-sm space-y-1">
-                    <li>• Progressed from trainee UI Designer to UI Engineer at a Total IT solutions company.</li>
-                    <li>• Supported businesses of all sizes with successful web solutions.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mission Statement */}
-          <div className="card-glass rounded-xl p-8 text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Mission Statement</h3>
-            <p className="text-gray-400 max-w-3xl mx-auto">
-            To design and build high-quality, innovative digital solutions that solve real business problems, delight users, and create long-term value for clients—while continuously learning, sharing knowledge, and raising the standard of frontend development.
-            </p>
-          </div>
-
-          {/* Education Section */}
-          <div className="card-glass rounded-xl p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-              <h3 className="text-2xl font-bold">Education & Certifications</h3>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="border-l-2 border-blue-500 pl-4">
-                <h4 className="font-bold text-lg mb-1">Bachelor of Information Technology (BIT)</h4>
-                <p className="text-blue-400 text-sm mb-2">Sri Lankan Institute of Information Technology</p>
-                <span className="text-sm text-gray-400">2010 - 2013</span>
-              </div>
-
-              <div className="border-l-2 border-blue-500 pl-4">
-                <h4 className="font-bold text-lg mb-1">Web Development using PHP/MySQL</h4>
-                <p className="text-blue-400 text-sm mb-2">Sri Lanka Institute of Information Technology</p>
-                <span className="text-sm text-gray-400">2016</span>
-              </div>
-
-              <div className="border-l-2 border-blue-500 pl-4">
-                <h4 className="font-bold text-lg mb-1">Diploma in Computer Studies</h4>
-                <p className="text-blue-400 text-sm mb-2">Tertiary and Vocational Education Commission of Sri Lanka</p>
-                <span className="text-sm text-gray-400">2004</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
+
+      <SectionDivider />
+
+      <SkillsGalaxy />
+
+      <SectionDivider />
+
+      <WorkExperienceTimeline />
+
+      <SectionDivider />
 
       {/* Featured Projects Section */}
       <section className="py-20 px-4 bg-dark-800/30" id="projects">
@@ -1153,6 +900,12 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionDivider />
+
+      <EducationCarousel />
+
+      <SectionDivider />
+
       {/* Contact Section */}
       <section className="py-20 px-4" id="contact">
         <div className="max-w-6xl mx-auto">
@@ -1236,8 +989,11 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2">
+                <li><a href="#skills" className="text-gray-400 hover:text-blue-400 transition-colors">Skills</a></li>
                 <li><a href="#about" className="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                <li><a href="#experience" className="text-gray-400 hover:text-blue-400 transition-colors">Experience</a></li>
                 <li><a href="#projects" className="text-gray-400 hover:text-blue-400 transition-colors">Projects</a></li>
+                <li><a href="#education" className="text-gray-400 hover:text-blue-400 transition-colors">Education</a></li>
                 <li><a href="#contact" className="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">LinkedIn</a></li>
               </ul>
@@ -1262,9 +1018,7 @@ export default function Home() {
             <p className="text-gray-400 text-sm">
               © 2026 Heshantha. All rights reserved.
             </p>
-            <p className="text-gray-500 text-xs">
-              Made with ❤️ using <span className="text-blue-400">Next.js</span> and <span className="text-blue-400">TypeScript</span>
-            </p>
+
           </div>
         </div>
       </footer>

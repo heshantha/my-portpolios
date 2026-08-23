@@ -3,8 +3,8 @@ import Chatbot from '@/components/Chatbot'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Heshantha Lakshitha Abeykoon - Senior Front end Developer',
-  description: 'Portfolio of Heshantha Lakshitha Abeykoon - Senior Front end Developer',
+  title: 'Heshantha Lakshitha Abeykoon - Senior Full Stack Engineer',
+  description: 'Portfolio of Heshantha Lakshitha Abeykoon - Senior Full Stack Engineer',
 }
 
 export default function RootLayout({

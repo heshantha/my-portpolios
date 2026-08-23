@@ -156,6 +156,45 @@ Other work mentioned in experience: Medispec (UK hospital appointments), Apigeni
     ],
     content: `You should hire me because I have strong experience in React, Next.js, TypeScript, and modern front-end development. I can build responsive, accessible, and high-performance applications while working effectively with designers, backend developers, and stakeholders. I am a quick learner, a reliable team member, and always focused on delivering high-quality solutions that support the company’s goals.`,
   },
+  {
+    id: 'site-tech-stack',
+    title: 'Portfolio site tech stack',
+    keywords: [
+      'tech', 'stack', 'technology', 'next', 'react', 'typescript', 'tailwind',
+      'site', 'website', 'portfolio', 'built', 'used', 'framework',
+    ],
+    content: `TECH STACK DOCUMENT
+====================
+Project: Heshantha Portfolio Website + Heshantha BOT
+
+1. CORE FRAMEWORK
+   - Next.js 14 (App Router)
+   - React 18
+   - TypeScript
+
+2. STYLING & UI
+   - Tailwind CSS
+   - PostCSS + Autoprefixer
+   - Lucide React (icons)
+   - Google Fonts (Space Grotesk, Inter)
+
+3. FEATURES & INTEGRATIONS
+   - Portfolio chatbot (custom Q&A engine)
+   - Contact / email via Nodemailer
+   - Next.js Image optimization
+   - CV download (PDF)
+
+4. TOOLING
+   - Node.js
+   - npm
+   - ESLint (Next.js)
+
+5. DEPLOYMENT READY
+   - next build / next start
+   - Static assets in /public
+
+Summary: This site is built with Next.js, React, TypeScript, and Tailwind CSS, with a custom chatbot and Nodemailer for contact.`,
+  },
 ]
 
 export const offTopicReply =

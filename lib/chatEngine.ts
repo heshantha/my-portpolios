@@ -19,6 +19,10 @@ const INTENT_CHUNKS: { pattern: RegExp; ids: string[] }[] = [
     ids: ['why-hire'],
   },
   {
+    pattern: /\b(tech\s*stack|stack\s+used|used\s+for\s+this|this\s+(site|website|portfolio)|built\s+with|technology\s+stack)\b/i,
+    ids: ['site-tech-stack'],
+  },
+  {
     pattern: /\b(worked|work|working|career|companies|company|employer|professional journey|job history|experience)\b/i,
     ids: ['experience'],
   },
